@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="text-white text-center bg-dark my-4 py-4"> 
+        <h1>*ngIf con ng-Tempalte y evento (click)="x"</h1>
+    </div>
+</div>
+<div class="container border border-primary rounded">
+    <div class="text-justify my-2 py-4">
+        <p>A continuacion veremos el funcionamineto del *ngIf y el evento click, vamos a usar 
+        dos parrafos y un boton, en el cual al presionar el boton se va a ocular o desaparecer
+        uno de los parrafos.</p>
+    </div>
+</div>
+<div class="container border border-primary rounded my-2">
+    <div class="container my-2 py-2">
+        <button type="button" class="btn btn-primary" (click)="show=!show">Mostrar Texto</button> {{ show }}
+    </div>
+    <div class="row">
+        <div class="col-sm border border-primary rounded my-2 mx-2 py-2 text-center">
+            <img src="../../../assets/Images/ngIf.JPG">
+        </div>
+        <div class="col-sm border border-primary rounded my-2 mx-2 py-2 text-center">
+            <!-- se declara la variable en el .ts show:boolean = falsea -->
+            <p class="text-justify text-success  mx-2 py-2" *ngIf="show">
+                Texto que va a aparecer porque la variable <b>show</b> se vuelve true.
+            </p>
+           
+            <p class="text-justify text-danger mx-2 py-2">
+                Texto que va a aparecer porque la variable <b>show</b> se vuelve false.
+            </p>
+
+        </div>
+    </div>
+</div>
