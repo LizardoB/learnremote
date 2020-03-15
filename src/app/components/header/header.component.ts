@@ -13,4 +13,5 @@ export class HeaderComponent implements OnInit {
   }
 
   show:boolean = false
+  show2:boolean = true
 }

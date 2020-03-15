@@ -11,15 +11,15 @@
     </div>
 </div>
 <div class="container border border-primary rounded my-2">
-    <div class="container my-2 py-2">
-        <button type="button" class="btn btn-primary" (click)="show=!show">Mostrar Texto</button> {{ show }}
-    </div>
+    
+    <button type="button" class="btn btn-primary my-4" (click)="show=!show">Mostrar Texto</button> {{ show }}
+    
     <div class="row">
         <div class="col-sm border border-primary rounded my-2 mx-2 py-2 text-center">
             <img src="../../../assets/Images/ngIf.JPG">
         </div>
         <div class="col-sm border border-primary rounded my-2 mx-2 py-2 text-center">
-            <!-- se declara la variable en el .ts show:boolean = falsea -->
+            <!-- se declara la variable en el .ts show:boolean = false -->
             <p class="text-justify text-success  mx-2 py-2" *ngIf="show">
                 Texto que va a aparecer porque la variable <b>show</b> se vuelve true.
             </p>
@@ -28,6 +28,33 @@
                 Texto que va a aparecer porque la variable <b>show</b> se vuelve false.
             </p>
 
+        </div>
+    </div>
+</div>
+
+<div class="border border-primary rounded container my-4 py-4">
+    <p class="text-justify">
+        Ahora veremos el uso del if/else, para eso necesitamos usar el ng-Temaplate, si show2 en true
+        se muestra el primer texto, si show2 es false se muestra el segundo texto
+    </p>
+</div>
+
+<div class="border border-primary rounded container my-2 py-2">
+    <button class="btn btn-primary my-4" (click)="show2=!show2">Mostrar Texto</button> {{ show2 }}
+    <!-- se declara la variable en el .ts show:boolean = false -->
+    <div class="row">
+        <div class="col-sm border border-primary rounded my-2 mx-2 py-2 text-center">
+            <img src="../../../assets/Images/ngTemplate.JPG" />
+        </div>
+        <div class="col-sm border border-primary rounded mx-2 my-2">
+            <div *ngIf="show2; else mostrarElse" class="text-justify text-success my-2">
+                <p>Texto a mostrar si <b>show2</b> es <b>true</b></p>
+            </div>
+            <ng-template #mostrarElse>
+                <div class="text-justify text-danger my-2">
+                    <p>Texto a mostrar si <b>show2</b> es <b>false</b></p>
+                </div>
+            </ng-template>
         </div>
     </div>
 </div>
